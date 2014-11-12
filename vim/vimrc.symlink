@@ -82,6 +82,7 @@ map <F3> :!clear && grep -nr
 map <F4> :!rspec --color <CR>
 map <F5> :w <CR>
 map <F6> :Gstatus <CR>
+map <F8> Ibinding.pry<CR><Esc>
 map <Space> /
 map ñ :
 map <Tab> $
