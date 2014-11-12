@@ -1,18 +1,85 @@
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
-set nocompatible              " be iMproved, required
-"filetype off                  " required
+set nocompatible " be iMproved
+" For vundle
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-set expandtab
-set shiftwidth=2
-set softtabstop=2
+" Good looking bottom :)
+Plugin 'bling/vim-airline'
+
+Plugin 'gmarik/Vundle.vim'
+
+" Ctrl+P plugin (snap open)
+Plugin 'kien/ctrlp.vim'
+
+" " Solarized
+Plugin 'altercation/vim-colors-solarized'
+
+" " Fugitive
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'slim-template/vim-slim'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'vim-ruby/vim-ruby'
+
+"theme
+Plugin 'tomasr/molokai'
+
+"The NERD tree allows you to explore your filesystem and to open files and
+"directories. It presents the filesystem to you in the form of a tree which
+"you manipulate with the keyboard and/or mouse. It also allows you to perform
+"simple filesystem operations.
+Plugin 'scrooloose/nerdtree'
+
+"This is a simple plugin that helps to end certain structures automatically.
+Plugin 'tpope/vim-endwise'
+
+"Supertab is a vim plugin which allows you to use <Tab> for all your insert
+"completion needs (:help ins-completion).
+Plugin 'ervandew/supertab'
+
+"nsert or delete brackets, parens, quotes in pair.
+Plugin 'vim-scripts/Auto-Pairs'
+
+"An extensible & universal comment vim-plugin that also handles embedded
+"filetypes
+Plugin 'tomtom/tcomment_vim'
+
+call vundle#end()            " required
+
+filetype plugin indent on
+" Ruby stuff: Thanks Ben :)
+" ================
+syntax on " Enable syntax highlighting
+filetype plugin indent on " Enable filetype-specific indenting and plugins
+augroup myfiletypes
+" Clear old autocmds in group
+autocmd!
+" autoindent with two spaces, always expand tabs
+autocmd FileType ruby,eruby,yaml,markdown set ai sw=2 sts=2 et
+augroup END
+" ================
+" Syntax highlighting and theme
+syntax enable
+" Configs to make Molokai look great
+set background=dark
+let g:molokai_original=1
+let g:rehash256=1
+set t_Co=256
+colorscheme molokai
+" Show trailing whitespace and spaces before a tab:
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\\t/
+" Lovely linenumbers
 set nu
-set autoread
-set nonumber
+
+let g:airline_theme='luna'
+let g:airline_powerline_fonts=1
+set laststatus=2
 
 " Mappings
 map <Esc><Esc> :q <CR>
-map <F2> :Ex <CR>
+map <F2> :NERDTree <CR>
 map <F3> :!clear && grep -nr
 map <F4> :!rspec --color <CR>
 map <F5> :w <CR>
@@ -21,7 +88,7 @@ map <Space> /
 map ñ :
 map <Tab> $
 
-" Todos
+" Todos i should move this to a plugin.
 function Box()
   return '[ ]'
 endfunction
@@ -54,28 +121,8 @@ function Newtask()
   call append(line('.'), Box() . ' - ' )
 endfunction
 
-map <F7> :call Done() <CR>
-map <F8> :call Undone() <CR>
-map <F9> :call AddBox() <CR>
-map <F11> :call RemoveBox() <CR>
-map <F10> :call Newtask() <CR>j$a
-
-"set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-" Ctrl+P plugin (snap open)
-Plugin 'kien/ctrlp.vim'
-" " Solarized
-Plugin 'altercation/vim-colors-solarized'
-" " Fugitive
-Plugin 'tpope/vim-fugitive'
-Plugin 'slim-template/vim-slim'
-Plugin 'bronson/vim-trailing-whitespace'
-
-call vundle#end()            " required
-
-
-
-
+map <C-d> :call Done() <CR>
+map <C-u> :call Undone() <CR>
+map <C-a> :call AddBox() <CR>
+map <C-r> :call RemoveBox() <CR>
+map <C-n> :call Newtask() <CR>j$a
