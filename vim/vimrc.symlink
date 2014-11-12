@@ -45,13 +45,11 @@ Plugin 'vim-scripts/Auto-Pairs'
 "filetypes
 Plugin 'tomtom/tcomment_vim'
 
+"Defaults everyone can agree on
+Plugin 'tpope/vim-sensible'
+
 call vundle#end()            " required
 
-filetype plugin indent on
-" Ruby stuff: Thanks Ben :)
-" ================
-syntax on " Enable syntax highlighting
-filetype plugin indent on " Enable filetype-specific indenting and plugins
 augroup myfiletypes
 " Clear old autocmds in group
 autocmd!
