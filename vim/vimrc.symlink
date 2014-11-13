@@ -60,8 +60,8 @@ call vundle#end()            " required
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 "put snips on dotfile folder
 "let g:UltiSnipsSnippetsDir="~/.dotfiles/vim/snips"
 " If you want :UltiSnipsEdit to split your window.
