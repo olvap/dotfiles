@@ -51,6 +51,9 @@ Plugin 'tpope/vim-sensible'
 "The ultimate snippet solution for Vim.
 Plugin 'SirVer/ultisnips'
 
+"Easy text exchange operator for Vim.
+Plugin 'tommcdo/vim-exchange'
+
 call vundle#end()            " required
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
