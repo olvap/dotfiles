@@ -54,6 +54,8 @@ Plugin 'SirVer/ultisnips'
 "Easy text exchange operator for Vim.
 Plugin 'tommcdo/vim-exchange'
 
+"Vim script for text filtering and alignment
+Plugin 'godlygeek/tabular'
 call vundle#end()            " required
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -93,14 +95,22 @@ set laststatus=2
 " Mappings
 map <Esc><Esc> :q <CR>
 map <F2> :NERDTree <CR>
-map <F3> :!clear && grep -nr
-map <F4> :!rspec --color <CR>
+"map <F3> :!clear && grep -nr
+"map <F4> :!rspec --color <CR>
 map <F5> :w <CR>
 map <F6> :Gstatus <CR>
 map <F8> Ibinding.pry<CR><Esc>
+let mapleader=','
 map <Space> /
 map ñ :
-map <Tab> $
+"map <Tab> $
+
+"inoremap : <ESC>call :Tabularize /:\zs<CR>i
+
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
 
 " Todos i should move this to a plugin.
 function Box()
