@@ -119,6 +119,15 @@ nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
 " Todos i should move this to a plugin.
+
+nmap <S-t> <C-a>:Tabularize /\|<CR>
+
+function CurrentPomodoro()
+  let l:fname = strftime('%Y_%m_%d') . ".pomodoro"
+  silent execute 'sp' l:fname
+  echomsg 'Edit' l:fname
+endfunction
+
 function Box()
   return '[ ]'
 endfunction
