@@ -107,9 +107,8 @@ map <F8> Ibinding.pry<CR><Esc>
 let mapleader=','
 map <Space> /
 map ñ :
-"map <Tab> $
-
-"inoremap : <ESC>call :Tabularize /:\zs<CR>i
+" Select all text
+nmap <C-a> ggVG
 
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
