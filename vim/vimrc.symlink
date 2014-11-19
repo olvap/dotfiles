@@ -56,6 +56,10 @@ Plugin 'tommcdo/vim-exchange'
 
 "Vim script for text filtering and alignment
 Plugin 'godlygeek/tabular'
+
+"lean & mean status/tabline for vim that's light as air
+Plugin 'airblade/vim-gitgutter'
+
 call vundle#end()            " required
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
