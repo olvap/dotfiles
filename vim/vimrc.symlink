@@ -118,41 +118,9 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
-" Todos i should move this to a plugin.
-function Box()
-  return '[ ]'
-endfunction
+" Move a selected line up and down
+noremap <silent> <C-K> :m -2 <CR>
+noremap <silent> <C-J> :m +1 <CR>
 
-function EmptyBox()
-  return '\[ \]'
-endfunction
-
-function FullBox()
-  return '\[x\]'
-endfunction
-
-function Done()
-  call setline('.', substitute(getline('.'), EmptyBox(), FullBox(), 'g'))
-endfunction
-
-function Undone()
-  call setline('.', substitute(getline('.'), FullBox(), EmptyBox(), 'g'))
-endfunction
-
-function AddBox()
-  call setline('.', substitute(getline('.'), '\] - ', '\]\[ \] - ', 'g'))
-endfunction
-
-function RemoveBox()
-  call setline('.', substitute(getline('.'), '\]\[ \] -', '\] -','g'))
-endfunction
-
-function Newtask()
-  call append(line('.'), Box() . ' - ' )
-endfunction
-
-map <C-d> :call Done() <CR>
-map <C-u> :call Undone() <CR>
-map <C-a> :call AddBox() <CR>
-map <C-r> :call RemoveBox() <CR>
-map <C-n> :call Newtask() <CR>j$a
+vmap <silent> <C-K> :m -2 <CR>
+vmap <silent> <C-J> :m +2 <CR>
