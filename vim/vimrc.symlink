@@ -163,8 +163,8 @@ function Newtask()
   call append(line('.'), Box() . ' - ' )
 endfunction
 
-map <C-d> :call Done() <CR>
-map <C-u> :call Undone() <CR>
-map <C-a> :call AddBox() <CR>
-map <C-r> :call RemoveBox() <CR>
-map <C-n> :call Newtask() <CR>j$a
+"map <C-d> :call Done() <CR>
+"map <C-u> :call Undone() <CR>
+"map <C-a> :call AddBox() <CR>
+"map <C-r> :call RemoveBox() <CR>
+"map <C-n> :call Newtask() <CR>j$a
