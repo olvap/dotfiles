@@ -110,6 +110,11 @@ map ñ :
 " Select all text
 nmap <C-a> ggVG
 
+" Add brackets, parens and quotes arround a word
+nmap { i{<Esc>lxea}<Esc>
+nmap [ i[<Esc>lxea]<Esc>
+nmap " i"<Esc>lxea"<Esc>"]}
+
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
