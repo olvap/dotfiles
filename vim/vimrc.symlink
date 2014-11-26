@@ -132,3 +132,11 @@ noremap <silent> <C-J> :m +1 <CR>
 
 vmap <silent> <C-K> :m -2 <CR>
 vmap <silent> <C-J> :m +2 <CR>
+
+nmap <S-t> <C-a>:Tabularize /\|<CR>
+
+function CurrentPomodoro()
+  let l:fname = strftime('%Y_%m_%d') . ".pomodoro"
+  silent execute 'sp' l:fname
+  echomsg 'Edit' l:fname
+endfunction
