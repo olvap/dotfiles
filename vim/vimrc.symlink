@@ -1,6 +1,5 @@
-set nocompatible " be iMproved
-" For vundle
-filetype off
+set nocompatible 	" be iMproved
+filetype off 		" For vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -115,20 +114,20 @@ nmap { i{<Esc>lxea}<Esc>
 nmap [ i[<Esc>lxea]<Esc>
 nmap " i"<Esc>lxea"<Esc>"]}
 
-nmap <Leader>a= :Tabularize /=<CR>
+" Mapping for plugin to tabularize
 vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 
-"Move between windows using alt + arrow
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
+" Move between windows
+nmap <C-H> <C-W>h
+nmap <C-J> <C-W>j
+nmap <C-K> <C-W>k
+nmap <C-L> <C-W>l
 
-" Move a selected line up and down
-noremap <silent> <C-K> :m -2 <CR>
-noremap <silent> <C-J> :m +1 <CR>
-
-vmap <silent> <C-K> :m -2 <CR>
-vmap <silent> <C-J> :m +2 <CR>
+" Move a line or selected lines one position up or down
+nnoremap <A-Down> :m .+1<CR>==
+nnoremap <A-Up> :m .-2<CR>==
+vnoremap <A-Down> :m '>+1<CR>gv=gv
+vnoremap <A-Up> :m '<-2<CR>gv=gv
