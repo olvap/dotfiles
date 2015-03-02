@@ -59,6 +59,9 @@ Plugin 'godlygeek/tabular'
 "lean & mean status/tabline for vim that's light as air
 Plugin 'airblade/vim-gitgutter'
 
+" The Vim RuboCop plugin runs RuboCop and displays the results in Vim
+Plugin 'ngmy/vim-rubocop'
+
 " coffeescript
 Plugin 'kchmck/vim-coffee-script'
 
