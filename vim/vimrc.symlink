@@ -59,6 +59,9 @@ Plugin 'godlygeek/tabular'
 "lean & mean status/tabline for vim that's light as air
 Plugin 'airblade/vim-gitgutter'
 
+" coffeescript
+Plugin 'kchmck/vim-coffee-script'
+
 call vundle#end()            " required
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
