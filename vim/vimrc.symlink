@@ -67,6 +67,9 @@ Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()            " required
 
+" ctrlp ignore some folders
+let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn)|logs|node_modules|bower_modules|vendor)$'
+
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
