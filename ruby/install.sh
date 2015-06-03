@@ -1,13 +1,9 @@
 #!/bin/sh
 
-if test ! $(which rbenv)
-then
-  echo "  Installing rbenv for you."
-  brew install rbenv > /tmp/rbenv-install.log
-fi
+echo "  Installing rvm for you."
 
-if test ! $(which ruby-build)
-then
-  echo "  Installing ruby-build for you."
-  brew install ruby-build > /tmp/ruby-build-install.log
-fi
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+
+apt-get install curl
+
+\curl -sSL https://get.rvm.io | bash -s stable
