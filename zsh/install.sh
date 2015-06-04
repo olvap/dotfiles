@@ -1,3 +1,4 @@
-apt-get install zsh
+sudo apt-get install zsh
 
-chsh -s /bin/zsh
+chsh -s $(which zsh)
+
