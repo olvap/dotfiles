@@ -65,6 +65,9 @@ Plugin 'ngmy/vim-rubocop'
 " coffeescript
 Plugin 'kchmck/vim-coffee-script'
 
+" Check syntaxis errors live
+Plugin 'scrooloose/syntastic'
+
 call vundle#end()            " required
 
 " ctrlp ignore some folders
@@ -117,6 +120,9 @@ map <Space> /
 map ñ :
 " Select all text
 nmap <C-a> ggVG
+
+" Syntastic configuration
+let g:syntastic_ruby_checkers = ['rubocop']
 
 " Add brackets, parens and quotes arround a word
 vmap ( I(<Esc>lxgvlA)<Esc>
