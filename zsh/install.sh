@@ -1,4 +1,4 @@
-sudo apt-get install zsh
+i zsh
 
 chsh -s $(which zsh)
 
