@@ -27,6 +27,8 @@ do
   source $file
 done
 
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
@@ -41,5 +43,6 @@ unset config_files
 
 stty -ixon -ixoff
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
+
