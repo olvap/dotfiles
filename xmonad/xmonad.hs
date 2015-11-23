@@ -27,8 +27,6 @@ import qualified Data.Map        as M
 --
 myTerminal = "/usr/bin/xterm"
 
-Chat = "/usr/bin/pidgin"
-
 -- The command to lock the screen or show the screensaver.
 myScreensaver = "/usr/bin/gnome-screensaver-command --lock"
 
@@ -48,7 +46,7 @@ myLauncher = "$(./.cabal/bin/yeganesh -x -- -fn '-*-terminus-*-r-normal-*-*-120-
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media"] ++ map show [6..9]
+myWorkspaces = ["1:term","2:web","3:code","4:e-mail","5:chat"] ++ map show [6..9]
 
 
 ------------------------------------------------------------------------

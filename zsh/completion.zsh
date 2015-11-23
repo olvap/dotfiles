@@ -1,5 +1,3 @@
-# matches case insensitive for lowercase
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle '*' days 'Monday Tuesday'
 
-# pasting with tabs doesn't perform completion
-zstyle ':completion:*' insert-tab pending
+zstyle -e '*' days 'reply=(Monday Tuesday)'
