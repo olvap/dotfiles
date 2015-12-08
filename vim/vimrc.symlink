@@ -21,9 +21,6 @@ Plugin 'slim-template/vim-slim'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'vim-ruby/vim-ruby'
 
-"theme
-Plugin 'tomasr/molokai'
-
 "The NERD tree allows you to explore your filesystem and to open files and
 "directories. It presents the filesystem to you in the form of a tree which
 "you manipulate with the keyboard and/or mouse. It also allows you to perform
@@ -93,10 +90,9 @@ augroup END
 syntax enable
 " Configs to make Molokai look great
 set background=dark
-let g:molokai_original=1
 let g:rehash256=1
 set t_Co=256
-colorscheme molokai
+colorscheme solarized
 " Show trailing whitespace and spaces before a tab:
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\\t/

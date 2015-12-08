@@ -1,0 +1,11 @@
+color status green default
+set imap_user = "pablo@thinkcera.com@gmail.com"
+set imap_pass     = $SECRECT_WORK_EMAIL
+set smtp_url = "smtp://pablo@thinkcerca.com@smtp.gmail.com:465"
+set from = "pablo@thinkcerca.com"
+set realname = "Pablo Oldani"
+set folder = "imaps://pablo@thinkcerca.com@imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed= "+[Gmail]/Drafts"
+set ssl_starttls=yes
+set ssl_force_tls=yes

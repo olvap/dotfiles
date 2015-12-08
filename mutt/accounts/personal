@@ -1,0 +1,11 @@
+color status cyan default
+set imap_user = "oldani.pablo@gmail.com"
+set imap_pass     = $SECRECT_PERSONAL_EMAIL
+set from = "oldani.pablo@gmail.com"
+set realname = "Pablo Oldani"
+set hostname = gmail.com
+set folder = "imaps://oldani.pablo@imap.gmail.com:993"
+set spoolfile = "imaps://oldani.pablo@imap.gmail.com/INBOX"
+set postponed = "imaps://oldani.pablo@imap.gmail.com/[Gmail]/Drafts"
+set record = "imaps://oldani.pablo@imap.gmail.com/[Gmail]/Sent Mail"
+set smtp_url	= "smtps://smtp.gmail.com/465"

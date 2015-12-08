@@ -327,7 +327,8 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = return ()
+myStartupHook = do
+  spawn "xrdb ~/.Xresources"
 
 ------------------------------------------------------------------------
 -- Run xmonad with all the defaults we set up.
@@ -342,7 +343,8 @@ main = do
           , ppSep = "   "
       }
       , manageHook = manageDocks <+> myManageHook
-      , startupHook = setWMName "LG3D"
+      -- , startupHook = setWMName "LG3D"
+      , startupHook = myStartupHook
   }
 
 
