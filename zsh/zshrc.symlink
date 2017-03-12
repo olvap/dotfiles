@@ -43,6 +43,5 @@ unset config_files
 
 stty -ixon -ixoff
 
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
-
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
