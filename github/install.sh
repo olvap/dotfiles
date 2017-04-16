@@ -1,6 +1,6 @@
 read -p 'What is your github email: ' github_email
 
-i openssh
+sudo apt-get install openssh
 
 ssh-keygen -t rsa -b 4096 -C $github_email
 
