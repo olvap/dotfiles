@@ -5,6 +5,7 @@ call vundle#begin()
 
 " Good looking bottom :)
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'gmarik/Vundle.vim'
 
@@ -64,6 +65,12 @@ Plugin 'kchmck/vim-coffee-script'
 
 " Check syntaxis errors live
 Plugin 'scrooloose/syntastic'
+
+Plugin 'junegunn/goyo.vim'
+
+Plugin 'reedes/vim-pencil'
+
+Plugin 'tpope/vim-markdown'
 
 call vundle#end()            " required
 
