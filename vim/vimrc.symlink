@@ -12,10 +12,13 @@ Plugin 'gmarik/Vundle.vim'
 " Ctrl+P plugin (snap open)
 Plugin 'kien/ctrlp.vim'
 
-" " Solarized
+" True Sublime Text style multiple selections for Vim
+Plugin 'terryma/vim-multiple-cursors'
+
+" Solarized
 Plugin 'altercation/vim-colors-solarized'
 
-" " Fugitive
+" Fugitive
 Plugin 'tpope/vim-fugitive'
 
 Plugin 'slim-template/vim-slim'
@@ -64,7 +67,7 @@ Plugin 'ngmy/vim-rubocop'
 Plugin 'kchmck/vim-coffee-script'
 
 " Check syntaxis errors live
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 
 Plugin 'junegunn/goyo.vim'
 
@@ -72,10 +75,41 @@ Plugin 'reedes/vim-pencil'
 
 Plugin 'tpope/vim-markdown'
 
-call vundle#end()            " required
+" Vim plugin: Create your own text objects http://www.vim.org/scripts/script.php?script_id=2100
+Plugin 'kana/vim-textobj-user'
 
+" A custom text object for selecting ruby blocks. http://www.vim.org/scripts/script.php?script_id=3382
+Plugin 'nelstrom/vim-textobj-rubyblock'
+
+" Ruby on Rails power tools http://www.vim.org/scripts/script.php?script_id=1567
+Plugin 'tpope/vim-rails'
+
+Plugin 'tpope/vim-bundler'
+
+Plugin 'tpope/vim-rake'
+
+Plugin 'rainerborene/vim-reek'
+
+Plugin 'sbdchd/neoformat'
+
+" Asynchronous Lint Engine Prettier
+Plugin 'w0rp/ale'
+Plugin 'prettier/vim-prettier', {
+\ 'do': 'npm install',
+\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
+
+call vundle#end()            " required
 " ctrlp ignore some folders
-let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn)|logs|node_modules|bower_modules|vendor)$'
+let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn)|logs|node_modules|bower_modules|vendor|tmp)$'
+
+" Prettier option
+let g:ale_fix_on_save = 1
+
+" print semicolons
+let g:prettier#config#semi = 'false'
+
+" single quotes over double quotes
+let g:prettier#config#single_quote = 'true'"
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -106,6 +140,10 @@ colorscheme solarized
 " Lovely linenumbers
 set nu
 
+" syntax for tag files
+au BufRead,BufNewFile *.tag set filetype=html
+
+set colorcolumn=80
 let g:airline_theme='luna'
 let g:airline_powerline_fonts=1
 set laststatus=2
@@ -113,8 +151,6 @@ set laststatus=2
 " Mappings
 map <Esc><Esc> :q <CR>
 map <F2> :NERDTree <CR>
-"map <F3> :!clear && grep -nr
-"map <F4> :!rspec --color <CR>
 map <F5> :w <CR>
 map <F6> :Gstatus <CR>
 map <F8> Ibinding.pry<CR><Esc>
@@ -125,7 +161,7 @@ map ñ :
 nmap <C-a> ggVG
 
 " Syntastic configuration
-let g:syntastic_ruby_checkers = ['rubocop']
+"let g:syntastic_ruby_checkers = ['rubocop']
 
 " Add brackets, parens and quotes arround a word
 vmap ( I(<Esc>lxgvlA)<Esc>
